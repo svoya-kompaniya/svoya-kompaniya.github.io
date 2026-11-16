@@ -319,6 +319,18 @@ html.ty .hdr-call,html.ty .brand i{background:#FFC700;color:#121212}
 .gift b{color:#FFC700}
 @media (min-width:960px){ .gal .ph-wide{grid-column:span 2;aspect-ratio:auto} }
 
+.gp{position:fixed;left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:60;display:grid;grid-template-columns:auto 1fr;gap:12px 14px;align-items:center;padding:18px 18px 16px;border-radius:24px;background:#1c1c1c;color:#F3EFE6;box-shadow:inset 0 0 0 1px rgba(255,199,0,.45),0 30px 60px -20px rgba(0,0,0,.7);transform:translateY(20px);opacity:0;transition:transform .45s var(--ease),opacity .45s var(--ease)}
+.gp.on{transform:none;opacity:1}
+.gp[hidden]{display:none}
+.gp-ic{width:64px;height:64px;border-radius:18px;background:#FFC700;display:grid;place-items:center;animation:wob 2.4s ease-in-out infinite}
+@keyframes wob{0%,100%{transform:rotate(0)}10%{transform:rotate(-8deg)}20%{transform:rotate(7deg)}30%{transform:rotate(-4deg)}40%{transform:rotate(0)}}
+.gp-t b{display:block;font-size:19px;letter-spacing:-.02em;line-height:1.2;color:#FFC700;padding-right:26px}
+.gp-t span{display:block;font-size:14px;color:rgba(243,239,230,.7);margin-top:4px}
+.gp-go{grid-column:1/-1;width:100%;color:#121212}
+.gp-call{grid-column:1/-1;text-align:center;font-size:14px;color:rgba(243,239,230,.7)}
+.gp-x{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;border:0;background:#2a2a2a;color:#F3EFE6;font-size:20px;line-height:1;cursor:pointer}
+@media (min-width:960px){ .gp{left:auto;right:96px;bottom:22px;width:360px} }
+
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -628,6 +640,8 @@ html.ty .hdr-call,html.ty .brand i{background:#FFC700;color:#121212}
   </div>
 </footer>
 
+<div class="gp" id="gp" role="dialog" aria-modal="false" aria-labelledby="gp-h" hidden><button type="button" class="gp-x" aria-label="Закрыть">×</button><div class="gp-ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9"/><path d="M12 8S10.5 3 8 3.5 7 8 12 8zM12 8s1.5-5 4-4.5S17 8 12 8z"/></svg></div><div class="gp-t"><b id="gp-h">Водоочиститель в подарок</b><span>Подробности — по телефону 8 917 365-93-34</span></div><a class="btn btn-blood gp-go" href="https://wa.me/79173659334?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%92%D0%B5%D0%BD%D0%B5%D1%80%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%BD%D0%B0%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%B8%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%20%D0%B2%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D0%BA." target="_blank" rel="noopener">Оформить договор</a><a class="gp-call" href="tel:+79173659334">или позвонить</a></div>
+
 <div class="fab" aria-label="Связаться"><a class="fb fb-wa" href="https://wa.me/79173659334" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg><span>WhatsApp</span></a><a class="fb fb-mx" href="#max" data-max aria-label="MAX"><b>M</b><span>MAX</span></a><a class="fb fb-ph" href="tel:+79173659334" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>8 917 365-93-34</span></a></div>
 
 <div class="bar" id="bar">
@@ -662,6 +676,16 @@ html.ty .hdr-call,html.ty .brand i{background:#FFC700;color:#121212}
   document.querySelectorAll('[data-max]').forEach(function(a){ if(MAX_URL){a.href=MAX_URL;a.target='_blank';a.rel='noopener';return;} a.addEventListener('click',function(e){ e.preventDefault(); if(md.showModal) md.showModal(); }); });
   md.addEventListener('click',function(e){ if(e.target===md||e.target.classList.contains('x')) md.close(); });
   document.getElementById('maxcopy').addEventListener('click',function(){ var b=this, t='+79173659334'; (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Номер скопирован ✓'},function(){b.textContent='+7 917 365-93-34'}); });
+
+
+  var gp=document.getElementById('gp'), gpSeen=false;
+  try{ gpSeen=sessionStorage.getItem('gp-closed')==='1'; }catch(e){}
+  function gpShow(){ if(gpSeen||!gp.hidden) return; gp.hidden=false; requestAnimationFrame(function(){ gp.classList.add('on'); }); }
+  function gpHide(){ gp.classList.remove('on'); setTimeout(function(){ gp.hidden=true; },450); gpSeen=true; try{ sessionStorage.setItem('gp-closed','1'); }catch(e){} }
+  if(!gpSeen){ setTimeout(gpShow,6000); addEventListener('scroll',function(){ if(scrollY>innerHeight*1.2) gpShow(); },{passive:true}); }
+  gp.querySelector('.gp-x').addEventListener('click',gpHide);
+  gp.querySelector('.gp-go').addEventListener('click',function(){ setTimeout(gpHide,300); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape'&&!gp.hidden) gpHide(); });
 
   var lb=document.getElementById('lb');
   document.querySelectorAll('button.ph').forEach(function(b){ b.addEventListener('click',function(){ var im=b.querySelector('img'); lb.querySelector('img').src=im.src; lb.querySelector('img').alt=im.alt; lb.querySelector('p').textContent=b.querySelector('figcaption').textContent; if(lb.showModal) lb.showModal(); }); });
