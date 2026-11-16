@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rolanmasaba-netizen.github.io/remont-ufa/sitemap.xml
