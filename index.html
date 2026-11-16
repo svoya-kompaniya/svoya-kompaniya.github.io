@@ -278,6 +278,41 @@ html.ty .fb-ph{color:#121212;animation-name:ringy}
 @keyframes ringy{0%,100%{box-shadow:0 14px 30px -10px rgba(0,0,0,.45),0 0 0 0 rgba(255,199,0,.55)}50%{box-shadow:0 14px 30px -10px rgba(0,0,0,.45),0 0 0 12px rgba(255,199,0,0)}}
 html.ty .quote-chip{background:#fff}
 
+/* theme ty: no white — all dark */
+html.ty{--ink:#F3EFE6;--muted:#a9a49b;--line:rgba(255,255,255,.1);--custard:#121212}
+html.ty body{background:#121212;color:var(--ink)}
+html.ty #uslugi,html.ty .works,html.ty #otzyvy,html.ty .lead-sec{background:#171717}
+html.ty .steps,html.ty .faq,html.ty .why{background:#121212}
+html.ty .svc,html.ty .rev,html.ty .qa{background:#1f1f1f;box-shadow:inset 0 0 0 1px var(--line)}
+html.ty .svc .ic{background:#2a2a2a}
+html.ty .svc .ic svg{stroke:#FFC700}
+html.ty .svc[open] .ic{background:#FFC700}
+html.ty .svc[open] .ic svg{stroke:#121212}
+html.ty .svc .pl,html.ty .qa .pl{background:#2a2a2a}
+html.ty .svc .pl:before,html.ty .svc .pl:after,html.ty .qa .pl:before,html.ty .qa .pl:after{background:#F3EFE6}
+html.ty .ph{background:#1f1f1f}
+html.ty .ph figcaption{color:#F3EFE6}
+html.ty .st q{background:#1f1f1f;color:#F3EFE6}
+html.ty .rev .tag{background:#2a2a2a}
+html.ty .form{background:#1c1c1c;box-shadow:inset 0 0 0 1px var(--line),0 40px 80px -40px rgba(0,0,0,.6)}
+html.ty .chip span{background:#262626;box-shadow:inset 0 0 0 1.5px var(--line)}
+html.ty .chip input:checked + span{background:#FFC700;color:#121212}
+html.ty .inp{background:#262626;color:#F3EFE6}
+html.ty .inp:focus{box-shadow:inset 0 0 0 2px #FFC700}
+html.ty .tab{background:#1f1f1f;color:#F3EFE6}
+html.ty .tab b{background:#2a2a2a;color:#F3EFE6}
+html.ty .tab.on{background:#FFC700;color:#121212}
+html.ty .tab.on b{background:#121212;color:#FFC700}
+html.ty .btn-ink{background:#2a2a2a;color:#F3EFE6}
+html.ty .quote-chip{background:#1f1f1f;color:#F3EFE6;box-shadow:inset 0 0 0 1px var(--line),0 24px 50px -20px rgba(0,0,0,.6)}
+html.ty dialog.maxd{background:#1c1c1c;color:#F3EFE6}
+html.ty dialog.maxd .x{background:#2a2a2a;color:#F3EFE6}
+html.ty .ticker{border-top:0}
+
+html.ty .svc[open] .pl{background:#FFC700}
+html.ty .svc[open] .pl:before,html.ty .svc[open] .pl:after{background:#121212}
+html.ty .hdr-call,html.ty .brand i{background:#FFC700;color:#121212}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .rv.in{opacity:1;transform:none}
