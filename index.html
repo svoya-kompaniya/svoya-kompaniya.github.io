@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="ty">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,7 +12,7 @@
 <meta property="og:title" content="Ремонт квартир под ключ в Уфе — «Своя компания»">
 <meta property="og:description" content="Все виды ремонтных работ: плитка, сантехника, электрика, потолки, полы, двери, окна, дизайн-проект. 8 917 365-93-34">
 <meta property="og:image" content="https://svoya-kompaniya.github.io/img/tile-wall.jpg">
-<meta name="theme-color" content="#212842">
+<meta name="theme-color" content="#121212">
 <title>Ремонт квартир под ключ в Уфе — «Своя компания»</title>
 <meta name="description" content="Все виды ремонтных работ: плитка, сантехника, электрика, потолки, полы, двери, окна, дизайн-проект. «Своя компания», Уфа. 8 917 365-93-34">
 <link rel="preload" as="image" href="img/tile-wall.jpg">
@@ -241,6 +241,42 @@ footer a{color:var(--cream)}
 .bar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:50;display:grid;grid-template-columns:1.2fr 1.2fr .8fr;gap:8px;padding:8px;border-radius:24px;background:rgba(33,40,66,.82);backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);box-shadow:0 20px 50px -15px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .45s var(--ease)}
 .bar.on{transform:none}
 .bar .btn{min-height:50px;font-size:16px;padding:0 14px}
+
+
+.btn-wa{background:#25D366;color:#fff}
+.fab{display:none}
+@media (min-width:960px){
+  .fab{position:fixed;right:22px;bottom:22px;z-index:50;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+  .fb{height:56px;min-width:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 16px;color:#fff;text-decoration:none;font-weight:650;font-size:15px;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);transition:transform .25s var(--ease)}
+  .fb:hover{transform:translateY(-2px)}
+  .fb svg{width:24px;height:24px;flex:none}
+  .fb span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .35s var(--ease)}
+  .fb:hover span{max-width:180px}
+  .fb b{font:800 22px/1 var(--font)}
+  .fb-wa{background:#25D366}
+  .fb-mx{background:linear-gradient(135deg,#3a7bff,#8a4dff)}
+  .fb-ph{background:var(--blood);color:var(--custard);animation:ring 3s infinite}
+  @keyframes ring{0%,100%{box-shadow:0 14px 30px -10px rgba(0,0,0,.45),0 0 0 0 rgba(93,13,24,.45)}50%{box-shadow:0 14px 30px -10px rgba(0,0,0,.45),0 0 0 12px rgba(93,13,24,0)}}
+}
+
+/* theme: black + yellow (html.ty) */
+html.ty{--indigo:#121212;--indigo-2:#1c1c1c;--indigo-3:#3a3a3a;--cream:#F3EFE6;--custard:#F7F5F0;--sage:#FFC700;--blood:#FFC700;--blood-2:#FFD633;--ink:#121212;--muted:#5b5b5b;--line:rgba(18,18,18,.12)}
+html.ty .hdr,html.ty .bar{background:rgba(18,18,18,.86)}
+html.ty .btn-blood{color:#121212;box-shadow:0 12px 30px -12px rgba(255,199,0,.6)}
+html.ty .btn-blood:hover{background:#FFD633}
+html.ty .kicker{display:inline-block;background:#FFC700;color:#121212;padding:5px 10px;border-radius:6px}
+html.ty .why .kicker,html.ty .lead-sec .kicker{background:none;color:#FFC700;padding:0}
+html.ty .hero:before{background:radial-gradient(closest-side,rgba(255,199,0,.14),transparent 70%)}
+html.ty .lead-sec:before{background:radial-gradient(closest-side,rgba(255,199,0,.16),transparent 70%)}
+html.ty .eyebrow:before{box-shadow:0 0 0 4px rgba(255,199,0,.25)}
+html.ty .ticker{background:#FFC700;border:0}
+html.ty .ticker-in span:after{color:#121212}
+html.ty .st:before{background:#FFC700;color:#121212}
+html.ty .st:after{background:linear-gradient(#FFC700,rgba(18,18,18,.1))}
+html.ty footer{background:#0a0a0a}
+html.ty .fb-ph{color:#121212;animation-name:ringy}
+@keyframes ringy{0%,100%{box-shadow:0 14px 30px -10px rgba(0,0,0,.45),0 0 0 0 rgba(255,199,0,.55)}50%{box-shadow:0 14px 30px -10px rgba(0,0,0,.45),0 0 0 12px rgba(255,199,0,0)}}
+html.ty .quote-chip{background:#fff}
 
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
@@ -540,9 +576,11 @@ footer a{color:var(--cream)}
   </div>
 </footer>
 
+<div class="fab" aria-label="Связаться"><a class="fb fb-wa" href="https://wa.me/79173659334" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg><span>WhatsApp</span></a><a class="fb fb-mx" href="#max" data-max aria-label="MAX"><b>M</b><span>MAX</span></a><a class="fb fb-ph" href="tel:+79173659334" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>8 917 365-93-34</span></a></div>
+
 <div class="bar" id="bar">
   <a class="btn btn-blood" href="tel:+79173659334">Позвонить</a>
-  <a class="btn btn-cream" href="https://wa.me/79173659334" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-wa" href="https://wa.me/79173659334" target="_blank" rel="noopener">WhatsApp</a>
   <a class="btn btn-maxw" href="#max" data-max aria-label="Написать в MAX">MAX</a>
 </div>
 
