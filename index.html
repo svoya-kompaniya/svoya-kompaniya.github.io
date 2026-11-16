@@ -133,6 +133,36 @@ h2{font-size:clamp(32px,6.5vw,58px);line-height:1.03;letter-spacing:-.04em;font-
 .ph:hover img{transform:scale(1.04)}
 .ph figcaption{position:absolute;inset:auto 0 0 0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(20,24,40,.85));color:var(--custard);font-size:14.5px;line-height:1.35;font-weight:550}
 .gal-hint{font-size:13px;color:var(--muted);margin-top:4px}
+.msg{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px;font-size:14px;color:rgba(240,231,213,.6)}
+.chipbtn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;background:rgba(240,231,213,.08);box-shadow:inset 0 0 0 1px rgba(240,231,213,.18);color:var(--cream);text-decoration:none;font-weight:600;font-size:14px}
+.chipbtn svg{width:18px;height:18px}
+.mx{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,#3a7bff,#8a4dff);color:#fff;font:800 12px/1 var(--font)}
+.mx.big{width:56px;height:56px;border-radius:16px;font-size:28px;margin:0 auto 14px}
+.facts{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(240,231,213,.12)}
+.facts b{display:block;font-size:clamp(24px,5vw,34px);letter-spacing:-.03em;line-height:1;color:var(--cream)}
+.facts span{display:block;font-size:13px;line-height:1.35;color:rgba(240,231,213,.6);margin-top:6px}
+.btn-maxw{background:linear-gradient(135deg,#3a7bff,#8a4dff);color:#fff}
+.faq{background:var(--custard)}
+.qa-list{display:grid;gap:10px;max-width:860px}
+.qa{background:#fff;border-radius:18px;box-shadow:0 1px 0 var(--line)}
+.qa summary{list-style:none;display:flex;align-items:center;gap:14px;padding:20px;font-weight:650;font-size:17px;cursor:pointer}
+.qa summary::-webkit-details-marker{display:none}
+.qa .pl{margin-left:auto;width:28px;height:28px;border-radius:50%;background:var(--custard);position:relative;flex:none;transition:transform .35s var(--ease)}
+.qa .pl:before,.qa .pl:after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.8px;background:var(--indigo);transform:translate(-50%,-50%)}
+.qa .pl:after{transform:translate(-50%,-50%) rotate(90deg)}
+.qa[open] .pl{transform:rotate(45deg)}
+.qa p{padding:0 20px 20px;color:var(--muted);font-size:16px}
+.qa a,.f-msg a{color:inherit;font-weight:600}
+.checks{list-style:none;display:grid;gap:10px;margin-top:20px}
+.checks li{position:relative;padding-left:32px;color:var(--cream);font-size:16px}
+.checks li:before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--sage);color:var(--indigo);font-weight:800;font-size:13px;display:grid;place-items:center}
+.f-msg{margin-top:8px;color:rgba(240,231,213,.7)}
+dialog.maxd{border:0;border-radius:24px;padding:28px 22px 22px;max-width:340px;width:calc(100% - 40px);margin:auto;text-align:center;background:var(--custard);color:var(--ink)}
+dialog.maxd::backdrop{background:rgba(15,18,32,.7);backdrop-filter:blur(4px)}
+dialog.maxd h3{font-size:22px;letter-spacing:-.02em}
+dialog.maxd p{color:var(--muted);margin:6px 0 4px}
+.maxnum{display:block;font-size:28px;font-weight:750;letter-spacing:-.02em;text-decoration:none;margin-bottom:16px}
+dialog.maxd .x{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:var(--cream);font-size:20px;cursor:pointer}
 .tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -20px 18px;padding:2px 20px}
 .tabs::-webkit-scrollbar{display:none}
 .tab{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 16px;border-radius:999px;border:0;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);font-weight:600;font-size:15px;cursor:pointer;transition:background .2s,color .2s}
@@ -208,7 +238,7 @@ footer a{color:var(--cream)}
 .f-note{border-top:1px solid rgba(240,231,213,.1);padding-top:20px;line-height:1.6}
 
 /* sticky bar */
-.bar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:50;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:24px;background:rgba(33,40,66,.82);backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);box-shadow:0 20px 50px -15px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .45s var(--ease)}
+.bar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:50;display:grid;grid-template-columns:1.2fr 1.2fr .8fr;gap:8px;padding:8px;border-radius:24px;background:rgba(33,40,66,.82);backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);box-shadow:0 20px 50px -15px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .45s var(--ease)}
 .bar.on{transform:none}
 .bar .btn{min-height:50px;font-size:16px;padding:0 14px}
 
@@ -252,7 +282,7 @@ footer a{color:var(--cream)}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Своя компания","alternateName":"Своя компания — ремонт квартир в Уфе","url":"https://svoya-kompaniya.github.io/","telephone":"+7 917 365-93-34","image":"https://svoya-kompaniya.github.io/img/tile-wall.jpg","areaServed":{"@type":"City","name":"Уфа"},"address":{"@type":"PostalAddress","addressLocality":"Уфа","addressCountry":"RU"},"description":"Все виды ремонтных работ, ремонт под ключ: малярные работы, полы, монтаж стен и перегородок, электрика, сантехника, плиточные работы, потолки, установка дверей, окна и откосы, разработка дизайна."}
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Своя компания","alternateName":"Своя компания — ремонт квартир в Уфе","url":"https://svoya-kompaniya.github.io/","telephone":"+7 917 365-93-34","image":"https://svoya-kompaniya.github.io/img/tile-wall.jpg","foundingDate":"2020","areaServed":{"@type":"City","name":"Уфа"},"address":{"@type":"PostalAddress","addressLocality":"Уфа","addressCountry":"RU"},"description":"Все виды ремонтных работ, ремонт под ключ: малярные работы, полы, монтаж стен и перегородок, электрика, сантехника, плиточные работы, потолки, установка дверей, окна и откосы, разработка дизайна."}
 </script>
 </head>
 <body>
@@ -261,7 +291,7 @@ footer a{color:var(--cream)}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Наверх"><i>С</i><div>Своя компания<small>Ремонт квартир · Уфа</small></div></a>
     <nav class="nav" aria-label="Разделы">
-      <a href="#uslugi">Услуги</a><a href="#raboty">Работы</a><a href="#etapy">Как работаем</a><a href="#otzyvy">Отзывы</a><a href="#zayavka">Заявка</a>
+      <a href="#uslugi">Услуги</a><a href="#raboty">Работы</a><a href="#etapy">Как работаем</a><a href="#otzyvy">Отзывы</a><a href="#voprosy">Вопросы</a><a href="#zayavka">Заявка</a>
     </nav>
     <a class="hdr-call" href="tel:+79173659334"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>8 917 365-93-34</span><b class="sr">Позвонить</b></a>
   </div>
@@ -272,14 +302,16 @@ footer a{color:var(--cream)}
 <section class="hero" aria-label="Главное">
   <div class="wrap">
     <div>
-      <div class="eyebrow rv">Ремонт под ключ · Уфа</div>
+      <div class="eyebrow rv">Ремонт под ключ · Уфа · с 2020 года</div>
       <h1 class="rv">Квартира под ключ.<br><em>Одна бригада —</em><br>все работы.</h1>
-      <p class="lead rv">Плитка, сантехника, электрика, потолки, полы, стены, двери, окна и дизайн-проект. Венер и его команда — Венер на связи по всем вопросам.</p>
+      <p class="lead rv">Плитка, сантехника, электрика, потолки, полы, стены, двери, окна и дизайн-проект. Работает команда Венера — он на связи по всем вопросам.</p>
       <div class="cta rv">
         <a class="btn btn-blood" href="tel:+79173659334"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Позвонить Венеру</a>
         <a class="btn btn-ghost" href="#zayavka">Собрать заявку за минуту</a>
       </div>
+      <div class="msg rv"><span>Или напишите:</span><a class="chipbtn" href="https://wa.me/79173659334" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>WhatsApp</a><a class="chipbtn" href="#max" data-max><span class="mx" aria-hidden="true">M</span>MAX</a></div>
       <p class="cta-note rv"><b>8 917 365-93-34</b> · стоимость уточняйте по телефону</p>
+      <ul class="facts rv"><li><b>с 2020</b><span>работаем в Уфе</span></li><li><b>10</b><span>видов работ — одна бригада</span></li><li><b>3</b><span>способа связи: звонок, WhatsApp, MAX</span></li></ul>
     </div>
     <div class="hero-vis rv" aria-hidden="true">
       <div class="hero-photo hp1"><img src="img/tile-wall.jpg" alt="" width="396" height="606"></div>
@@ -425,12 +457,31 @@ footer a{color:var(--cream)}
   </div>
 </section>
 
+<section class="faq" id="voprosy">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div class="kicker">Вопросы</div>
+      <h2>Коротко о главном</h2>
+    </div>
+    <div class="qa-list">
+      <details class="qa rv"><summary>Сколько стоит ремонт?<span class="pl"></span></summary><p>Цены на сайте не публикуем — стоимость уточняйте по телефону <a href="tel:+79173659334">8 917 365-93-34</a>.</p></details>
+      <details class="qa rv"><summary>Какие работы делаете?<span class="pl"></span></summary><p>Все виды ремонтных работ и ремонт под ключ: малярные работы, полы, стены и перегородки, электрика, сантехника, плитка, потолки, двери, окна и откосы, дизайн.</p></details>
+      <details class="qa rv"><summary>Делаете дизайн-проект?<span class="pl"></span></summary><p>Да: дизайн-проект, 3D-визуализация, подбор материалов и авторский надзор.</p></details>
+      <details class="qa rv"><summary>Поможете выбрать материалы?<span class="pl"></span></summary><p>Подбор материалов — в списке услуг. Из отзыва клиентки: «помогал… в том числе с выбором материала».</p></details>
+      <details class="qa rv"><summary>Как начать?<span class="pl"></span></summary><p>Позвоните или напишите. Из отзыва: «Быстро отреагировали на запрос, пришли замерили».</p></details>
+      <details class="qa rv"><summary>Давно работаете?<span class="pl"></span></summary><p>В Уфе — с 2020 года.</p></details>
+      <details class="qa rv"><summary>Как с вами связаться?<span class="pl"></span></summary><p>Позвонить, написать в WhatsApp или MAX — номер один: <a href="tel:+79173659334">8 917 365-93-34</a>.</p></details>
+    </div>
+  </div>
+</section>
+
 <section class="lead-sec" id="zayavka">
   <div class="wrap">
     <div class="sec-h rv">
       <div class="kicker">Заявка</div>
       <h2>Соберите заявку — Венер получит её в WhatsApp</h2>
       <p>Отметьте, что нужно сделать. Мы сформируем готовое сообщение — останется нажать «Отправить».</p>
+      <ul class="checks"><li>Звонок, WhatsApp или MAX — один номер</li><li>Дизайн-проект и подбор материалов</li><li>Венер на связи на всех этапах</li></ul>
       <div class="price-note"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.5"/></svg><div><b>Сколько стоит?</b><br>Стоимость уточняйте по телефону <a href="tel:+79173659334" style="white-space:nowrap">8 917 365-93-34</a>.</div></div>
     </div>
     <form class="form rv" id="f" novalidate>
@@ -468,8 +519,9 @@ footer a{color:var(--cream)}
       <textarea class="inp" id="cm" placeholder="Район, сроки, пожелания…"></textarea>
       <div class="form-act" style="margin-top:20px">
         <button class="btn btn-blood" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>Отправить в WhatsApp</button>
-        <a class="btn btn-ink" href="tel:+79173659334">Или позвонить</a>
+        <a class="btn btn-ink" href="tel:+79173659334">Позвонить</a>
       </div>
+      <a class="btn btn-maxw" href="#max" data-max style="width:100%;margin-top:10px"><span class="mx" aria-hidden="true">M</span>Написать в MAX</a>
       <small>Форма ничего не отправляет на сервер: откроется WhatsApp с готовым текстом, отправляете вы сами.</small>
     </form>
   </div>
@@ -480,8 +532,9 @@ footer a{color:var(--cream)}
 <footer>
   <div class="wrap">
     <div>
-      <div style="margin-bottom:8px">«Своя компания» · ремонт квартир в Уфе</div>
+      <div style="margin-bottom:8px">«Своя компания» · ремонт квартир в Уфе с 2020 года</div>
       <a class="f-phone" href="tel:+79173659334">8 917 365-93-34</a>
+      <div class="f-msg">Звонок · <a href="https://wa.me/79173659334" target="_blank" rel="noopener">WhatsApp</a> · <a href="#max" data-max>MAX</a></div>
     </div>
     <div class="f-note">Ремонт квартир под ключ в Уфе. Отзывы — с Авито.</div>
   </div>
@@ -490,7 +543,10 @@ footer a{color:var(--cream)}
 <div class="bar" id="bar">
   <a class="btn btn-blood" href="tel:+79173659334">Позвонить</a>
   <a class="btn btn-cream" href="https://wa.me/79173659334" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-maxw" href="#max" data-max aria-label="Написать в MAX">MAX</a>
 </div>
+
+<dialog class="maxd" id="maxd"><button type="button" class="x" aria-label="Закрыть">×</button><div class="mx big" aria-hidden="true">M</div><h3>Напишите нам в MAX</h3><p>Найдите нас в MAX по номеру:</p><a class="maxnum" href="tel:+79173659334">8 917 365-93-34</a><button type="button" class="btn btn-ink" id="maxcopy" style="width:100%">Скопировать номер</button><a class="btn btn-maxw" href="https://max.ru/" target="_blank" rel="noopener" style="width:100%;margin-top:8px">Открыть MAX</a></dialog>
 
 <dialog class="lb" id="lb"><button type="button" aria-label="Закрыть">×</button><img alt=""><p></p></dialog>
 
@@ -509,6 +565,13 @@ footer a{color:var(--cream)}
     t.addEventListener('click',function(){ tabs.forEach(function(x){x.classList.toggle('on',x===t)}); cards.forEach(function(c){c.hidden=!(f==='all'||c.dataset.cat===f)}); gal.scrollLeft=0; }); });
   var vid=gal.querySelector('video');
   if(vid){ if('IntersectionObserver' in window){ new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ vid.preload='auto'; var p=vid.play(); if(p&&p.catch)p.catch(function(){}); } else vid.pause(); })},{threshold:.4}).observe(vid); } }
+
+
+  var MAX_URL=''; /* ссылка на профиль MAX (max.ru/u/...) — вставить, когда будет */
+  var md=document.getElementById('maxd');
+  document.querySelectorAll('[data-max]').forEach(function(a){ if(MAX_URL){a.href=MAX_URL;a.target='_blank';a.rel='noopener';return;} a.addEventListener('click',function(e){ e.preventDefault(); if(md.showModal) md.showModal(); }); });
+  md.addEventListener('click',function(e){ if(e.target===md||e.target.classList.contains('x')) md.close(); });
+  document.getElementById('maxcopy').addEventListener('click',function(){ var b=this, t='+79173659334'; (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Номер скопирован ✓'},function(){b.textContent='+7 917 365-93-34'}); });
 
   var lb=document.getElementById('lb');
   document.querySelectorAll('button.ph').forEach(function(b){ b.addEventListener('click',function(){ var im=b.querySelector('img'); lb.querySelector('img').src=im.src; lb.querySelector('img').alt=im.alt; lb.querySelector('p').textContent=b.querySelector('figcaption').textContent; if(lb.showModal) lb.showModal(); }); });
