@@ -133,6 +133,19 @@ h2{font-size:clamp(32px,6.5vw,58px);line-height:1.03;letter-spacing:-.04em;font-
 .ph:hover img{transform:scale(1.04)}
 .ph figcaption{position:absolute;inset:auto 0 0 0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(20,24,40,.85));color:var(--custard);font-size:14.5px;line-height:1.35;font-weight:550}
 .gal-hint{font-size:13px;color:var(--muted);margin-top:4px}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -20px 18px;padding:2px 20px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 16px;border-radius:999px;border:0;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);font-weight:600;font-size:15px;cursor:pointer;transition:background .2s,color .2s}
+.tab b{font-weight:600;font-size:12px;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--cream);display:inline-grid;place-items:center;color:var(--indigo)}
+.tab.on{background:var(--indigo);color:var(--cream);box-shadow:none}
+.tab.on b{background:var(--sage)}
+.ph[hidden]{display:none}
+.ph-video{cursor:default}
+.ph-video video{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(33,40,66,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--cream);font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px}
+.badge i{width:8px;height:8px;border-radius:50%;background:#e2504c;box-shadow:0 0 0 0 rgba(226,80,76,.6);animation:rec 1.6s infinite}
+@keyframes rec{70%{box-shadow:0 0 0 8px rgba(226,80,76,0)}100%{box-shadow:0 0 0 0 rgba(226,80,76,0)}}
+
 dialog.lb{border:0;padding:0;background:transparent;max-width:min(92vw,720px);max-height:92vh;margin:auto}
 dialog.lb::backdrop{background:rgba(15,18,32,.88);backdrop-filter:blur(6px)}
 dialog.lb img{max-height:80vh;width:auto;margin:auto;border-radius:16px}
@@ -226,7 +239,9 @@ footer a{color:var(--cream)}
   section{padding:128px 0}
   .svc-grid{grid-template-columns:repeat(3,1fr)}
   .why-grid{grid-template-columns:repeat(4,1fr)}
-  .gal{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0;gap:16px}
+  .gal{grid-auto-flow:row dense;grid-template-columns:repeat(4,1fr);overflow:visible;margin:0;padding:0;gap:16px}
+  .gal .ph-video{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+  .tabs{margin:0 0 24px;padding:0;flex-wrap:wrap}
   .gal-hint{display:none}
   .steps .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
   .steps .sec-h{position:sticky;top:110px}
@@ -337,15 +352,32 @@ footer a{color:var(--cream)}
     <div class="sec-h rv">
       <div class="kicker">Наши работы</div>
       <h2>Видно, как сделано изнутри</h2>
-      <p>Фото с объекта в процессе: плитка под мрамор, инсталляция, разводка воды.</p>
+      <p>Фото и видео с объекта в процессе: электрика, сантехника, перегородки, плитка. То, что потом закроют стены и потолки.</p>
     </div>
-    <div class="gal rv">
-      <button class="ph" type="button"><img src="img/collector.jpg" alt="Коллекторный узел с фильтрами и водонагревателем Electrolux, ниже инсталляция" width="396" height="540" loading="lazy"><figcaption>Коллекторный узел: фильтры, водонагреватель Electrolux, инсталляция</figcaption></button>
-      <button class="ph" type="button"><img src="img/tile-wall.jpg" alt="Стена из крупноформатной плитки под мрамор с системой выравнивания" width="396" height="606" loading="lazy"><figcaption>Крупноформатная плитка под мрамор, система выравнивания</figcaption></button>
-      <button class="ph" type="button"><img src="img/tile-corner.jpg" alt="Угол санузла в плитке под мрамор с клипсами СВП" width="398" height="606" loading="lazy"><figcaption>Угол в плитке под мрамор</figcaption></button>
-      <button class="ph" type="button"><img src="img/install-prep.jpg" alt="Плитка под мрамор, рамка ревизии и выводы канализации" width="398" height="606" loading="lazy"><figcaption>Плитка, ревизия и выводы под инсталляцию</figcaption></button>
-      <button class="ph" type="button"><img src="img/tile-pipes.jpg" alt="Плитка под мрамор, сверху выводы труб" width="396" height="552" loading="lazy"><figcaption>Плитка под мрамор и выводы труб</figcaption></button>
-      <button class="ph" type="button"><img src="img/tile-niche.jpg" alt="Крупноформатная плитка под мрамор над проёмом" width="396" height="606" loading="lazy"><figcaption>Крупноформат над проёмом</figcaption></button>
+    <div class="tabs rv" role="tablist" aria-label="Фильтр работ">
+      <button type="button" class="tab on" data-f="all">Все <b></b></button>
+      <button type="button" class="tab" data-f="el">Электрика <b></b></button>
+      <button type="button" class="tab" data-f="plumb">Сантехника <b></b></button>
+      <button type="button" class="tab" data-f="walls">Стены <b></b></button>
+      <button type="button" class="tab" data-f="tile">Плитка <b></b></button>
+    </div>
+    <div class="gal rv" id="gal">
+      <div class="ph ph-video" data-cat="walls"><video src="img/walls.mp4" poster="img/walls-poster.jpg" muted loop playsinline preload="none" aria-label="Видео: перегородки из блоков с дверным проёмом"></video><span class="badge"><i></i>Видео с объекта</span><figcaption>Перегородки из блоков с дверным проёмом</figcaption></div>
+      <button class="ph" type="button" data-cat="el"><img src="img/el-conduit-ceiling.jpg" alt="Пучок кабелей в серой гофре, ровно закреплённый по бетонному потолку" width="576" height="1280" loading="lazy"><figcaption>Электрика: трассы в гофре по потолку</figcaption></button>
+      <button class="ph" type="button" data-cat="plumb"><img src="img/collector-2.jpg" alt="Коллекторный узел на панели: фильтры, водонагреватель, коллекторы, ниже инсталляция" width="900" height="1200" loading="lazy"><figcaption>Коллекторный узел: фильтры, водонагреватель, инсталляция</figcaption></button>
+      <button class="ph" type="button" data-cat="walls"><img src="img/walls-partition.jpg" alt="Перегородка из газобетонных блоков" width="576" height="1280" loading="lazy"><figcaption>Перегородки из блоков</figcaption></button>
+      <button class="ph" type="button" data-cat="el"><img src="img/el-soundproof.jpg" alt="Мастер раскладывает кабели в гофре по потолку поверх шумоизоляции" width="720" height="1280" loading="lazy"><figcaption>Шумоизоляция потолка и электрика в гофре</figcaption></button>
+      <button class="ph" type="button" data-cat="tile"><img src="img/tile-wall.jpg" alt="Стена из крупноформатной плитки под мрамор с системой выравнивания" width="396" height="606" loading="lazy"><figcaption>Крупноформатная плитка под мрамор, система выравнивания</figcaption></button>
+      <button class="ph" type="button" data-cat="el"><img src="img/vent-ducts.jpg" alt="Белые вентиляционные короба и кабели в чёрной гофре на потолке" width="827" height="1214" loading="lazy"><figcaption>Вентиляционные короба и кабельные трассы</figcaption></button>
+      <button class="ph" type="button" data-cat="plumb"><img src="img/collector.jpg" alt="Коллекторный узел с фильтрами и водонагревателем Electrolux, ниже инсталляция" width="396" height="540" loading="lazy"><figcaption>Коллекторный узел: фильтры, водонагреватель Electrolux, инсталляция</figcaption></button>
+      <button class="ph" type="button" data-cat="walls"><img src="img/walls-doorway.jpg" alt="Перегородка из блоков с дверным проёмом" width="576" height="1280" loading="lazy"><figcaption>Перегородка с дверным проёмом</figcaption></button>
+      <button class="ph" type="button" data-cat="el"><img src="img/el-conduit-turn.jpg" alt="Ровные повороты пучка кабелей в серой гофре на потолке" width="900" height="405" loading="lazy"><figcaption>Ровные повороты кабельных трасс</figcaption></button>
+      <button class="ph" type="button" data-cat="tile"><img src="img/tile-corner.jpg" alt="Угол в плитке под мрамор с клипсами СВП" width="398" height="606" loading="lazy"><figcaption>Угол в плитке под мрамор</figcaption></button>
+      <button class="ph" type="button" data-cat="el"><img src="img/el-cables-ceiling.jpg" alt="Кабели в чёрной гофре на потолке, подписанные маркером" width="576" height="1280" loading="lazy"><figcaption>Кабельные трассы по потолку</figcaption></button>
+      <button class="ph" type="button" data-cat="plumb"><img src="img/install-prep.jpg" alt="Плитка под мрамор, рамка ревизии и выводы канализации" width="398" height="606" loading="lazy"><figcaption>Плитка, ревизия и выводы под инсталляцию</figcaption></button>
+      <button class="ph" type="button" data-cat="walls"><img src="img/walls-blocks.jpg" alt="Стена из газобетонных блоков, рядом стремянка" width="576" height="1280" loading="lazy"><figcaption>Кладка стен из блоков</figcaption></button>
+      <button class="ph" type="button" data-cat="tile"><img src="img/tile-pipes.jpg" alt="Плитка под мрамор, сверху выводы труб" width="396" height="552" loading="lazy"><figcaption>Плитка под мрамор и выводы труб</figcaption></button>
+      <button class="ph" type="button" data-cat="tile"><img src="img/tile-niche.jpg" alt="Крупноформатная плитка под мрамор над проёмом" width="396" height="606" loading="lazy"><figcaption>Крупноформат над проёмом</figcaption></button>
     </div>
     <p class="gal-hint">Листайте вбок →</p>
   </div>
@@ -471,8 +503,15 @@ footer a{color:var(--cream)}
   function onS(){ var h=hero.getBoundingClientRect().bottom<0; var f=form.getBoundingClientRect(); var inForm=f.top<innerHeight*.6&&f.bottom>innerHeight*.4; bar.classList.toggle('on',h&&!inForm); }
   addEventListener('scroll',onS,{passive:true}); onS();
 
+
+  var gal=document.getElementById('gal'), tabs=[].slice.call(document.querySelectorAll('.tab')), cards=[].slice.call(gal.children);
+  tabs.forEach(function(t){ var f=t.dataset.f; t.querySelector('b').textContent=cards.filter(function(c){return f==='all'||c.dataset.cat===f}).length;
+    t.addEventListener('click',function(){ tabs.forEach(function(x){x.classList.toggle('on',x===t)}); cards.forEach(function(c){c.hidden=!(f==='all'||c.dataset.cat===f)}); gal.scrollLeft=0; }); });
+  var vid=gal.querySelector('video');
+  if(vid){ if('IntersectionObserver' in window){ new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ vid.preload='auto'; var p=vid.play(); if(p&&p.catch)p.catch(function(){}); } else vid.pause(); })},{threshold:.4}).observe(vid); } }
+
   var lb=document.getElementById('lb');
-  document.querySelectorAll('.ph').forEach(function(b){ b.addEventListener('click',function(){ var im=b.querySelector('img'); lb.querySelector('img').src=im.src; lb.querySelector('img').alt=im.alt; lb.querySelector('p').textContent=b.querySelector('figcaption').textContent; if(lb.showModal) lb.showModal(); }); });
+  document.querySelectorAll('button.ph').forEach(function(b){ b.addEventListener('click',function(){ var im=b.querySelector('img'); lb.querySelector('img').src=im.src; lb.querySelector('img').alt=im.alt; lb.querySelector('p').textContent=b.querySelector('figcaption').textContent; if(lb.showModal) lb.showModal(); }); });
   lb.addEventListener('click',function(e){ if(e.target===lb||e.target.tagName==='BUTTON') lb.close(); });
 
   document.getElementById('f').addEventListener('submit',function(e){
