@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rolanmasaba-netizen.github.io/remont-ufa/sitemap.xml
+Sitemap: https://svoya-kompaniya.github.io/sitemap.xml
