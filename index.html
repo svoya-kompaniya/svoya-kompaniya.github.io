@@ -701,5 +701,52 @@ html.ty .hdr-call,html.ty .brand i{background:#FFC700;color:#121212}
   });
 })();
 </script>
+<script>
+/* Уведомления в Telegram. TG_TOKEN и TG_CHAT пустые — ничего не отправляется. */
+(function(){
+  var TG_TOKEN='9085191647:AAHJauSU0f-sDVIX7L9z-t5ccPBHOyGu_Nc', TG_CHAT='6627693819';
+  if(!TG_TOKEN||!TG_CHAT) return;
+  var ua=navigator.userAgent||'';
+  if(navigator.webdriver||/bot|crawl|spider|slurp|yandex(bot|images|metrika)|googlebot|lighthouse|headless|preview/i.test(ua)) return;
+  try{ if(/[?&]me=1/.test(location.search)) localStorage.setItem('tg-me','1'); if(localStorage.getItem('tg-me')==='1') return; }catch(e){}
+  function send(text){
+    try{
+      var b=new URLSearchParams(); b.set('chat_id',TG_CHAT); b.set('text',text); b.set('disable_web_page_preview','1');
+      fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage',{method:'POST',mode:'no-cors',keepalive:true,body:b});
+    }catch(e){}
+  }
+  function dev(){
+    var m=/Mobi|Android|iPhone/i.test(ua)?'📱 Телефон':(/iPad|Tablet/i.test(ua)?'📱 Планшет':'💻 Компьютер');
+    var os=/Android/i.test(ua)?'Android':/iPhone|iPad|Mac OS/i.test(ua)?'Apple':/Windows/i.test(ua)?'Windows':/Linux/i.test(ua)?'Linux':'';
+    return m+(os?', '+os:'');
+  }
+  function src(){
+    var r=document.referrer; if(!r) return 'прямой заход или ссылка из мессенджера';
+    try{ var h=new URL(r).hostname.replace(/^www\./,''); if(h===location.hostname) return 'внутри сайта';
+      if(/yandex/.test(h)) return 'Яндекс'; if(/google/.test(h)) return 'Google'; if(/avito/.test(h)) return 'Авито';
+      if(/vk\.|vk\.com/.test(h)) return 'ВКонтакте'; if(/t\.me|telegram/.test(h)) return 'Telegram'; return h; }catch(e){ return 'неизвестно'; }
+  }
+  function now(){ try{ return new Date().toLocaleString('ru-RU',{timeZone:'Asia/Yekaterinburg',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}); }catch(e){ return ''; } }
+  var seen=false; try{ seen=sessionStorage.getItem('tg-visit')==='1'; sessionStorage.setItem('tg-visit','1'); }catch(e){}
+  if(!seen) send('🔔 Новый посетитель на сайте\n'+dev()+'\n🔗 Откуда: '+src()+'\n🕒 '+now());
+  var last={};
+  function act(name){ var t=Date.now(); if(last[name]&&t-last[name]<30000) return; last[name]=t; send('👉 Посетитель нажал: '+name+'\n'+dev()+'\n🕒 '+now()); }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a,button'); if(!a) return;
+    if(a.classList.contains('gp-go')) return act('🎁 «Оформить договор» (подарок)');
+    var h=a.getAttribute('href')||'';
+    if(h.indexOf('tel:')===0) return act('📞 «Позвонить»');
+    if(h.indexOf('wa.me')>-1) return act('💬 WhatsApp');
+    if(a.hasAttribute('data-max')) return act('🟣 MAX');
+  },true);
+  var f=document.getElementById('f');
+  if(f) f.addEventListener('submit',function(){
+    var obj=(f.querySelector('input[name=obj]:checked')||{}).value||'';
+    var w=[].map.call(f.querySelectorAll('input[name=w]:checked'),function(i){return i.value}).join(', ');
+    var a=f.querySelector('#area').value.trim(), n=f.querySelector('#nm').value.trim();
+    send('📝 Собрали заявку и открыли WhatsApp\nОбъект: '+obj+(w?'\nРаботы: '+w:'')+(a?'\nПлощадь: '+a+' м²':'')+(n?'\nИмя: '+n:'')+'\n🕒 '+now());
+  });
+})();
+</script>
 </body>
 </html>
